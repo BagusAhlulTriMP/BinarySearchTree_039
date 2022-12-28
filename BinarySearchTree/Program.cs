@@ -20,4 +20,16 @@ namespace BinarySearchTree
             rightchild = r;
         }
     }
+    /* A node class consits of three things, the information,*references to the right child, and references to the left child */
+
+    class Program
+    {
+        public Node ROOT;
+        public Program()
+        {
+            ROOT = null; /* Initializing ROOT to null */
+        }
+
+
+    }
 }
