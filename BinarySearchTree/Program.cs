@@ -54,6 +54,37 @@ namespace BinarySearchTree
                 Console.WriteLine("Duplicate words not allowed");
                 return;
             }
+            else /* if the specified node is not present*/
+            {
+                tmp = new Node(element, null, null); /* Creates a Node */
+                if (parent == null) /* if the trees is empty */
+                {
+                    ROOT = tmp;
+                }
+                else if (string.Compare(element, parent.info) < 0)
+                {
+                    parent.leftchild = tmp;
+                }
+                else
+                {
+                    parent.rightchild = tmp;   
+                }
+            }
+        }
+
+        public void inorder(Node ptr)
+        {
+            if (ROOT == null)
+            {
+                Console.WriteLine("Tree is empty");
+                return;
+            }
+            if (ptr != null)
+            {
+                inorder(ptr.leftchild);
+                Console.WriteLine(ptr.info + "");
+                inorder(ptr.rightchild);
+            }
         }
     }
 }
